@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Campus Advisors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Hind', sans-serif;
             background-color: #2774AE; /* UCLA Blue */
             color: #FFFFFF; /* UCLA White */
             padding: 2rem;
@@ -19,6 +20,21 @@
         h1, h2, h3 {
             text-align: center;
             margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        table, th, td {
+            border: 1px solid #FFD100;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
         }
 
         label {
@@ -58,70 +74,48 @@
 </head>
 <body>
     <h1>Dream Campus Advisors</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Number of Classes (each class is 2 hours)</th>
+                <th>Hourly Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Up to 4 classes</td>
+                <td>$60 per hr ($120 per class)</td>
+            </tr>
+            <tr>
+                <td>5 - 8 classes</td>
+                <td>$55 per hr ($110 per class)</td>
+            </tr>
+            <tr>
+                <td>9 - 12 classes</td>
+                <td>$50 per hr ($100 per class)</td>
+            </tr>
+            <tr>
+                <td>13 - 16 classes</td>
+                <td>$45 per hr ($90 per class)</td>
+            </tr>
+            <tr>
+                <td>17 - 20 classes</td>
+                <td>$40 per hr ($80 per class)</td>
+            </tr>
+            <tr>
+                <td>21-24 classes</td>
+                <td>$35 per hour ($70 per class)</td>
+            </tr>
+        </tbody>
+    </table>
+
     <h2>Fee Calculator</h2>
-
-    <div>
-        <label for="classes">Number of Classes:</label>
-        <input type="number" id="classes" min="1" max="24">
-    </div>
-
-    <div>
-        <label for="siblings">Number of Siblings:</label>
-        <input type="number" id="siblings" min="0">
-    </div>
-
-    <div>
-        <label for="promo">Promo Code:</label>
-        <input type="text" id="promo">
-    </div>
-
-    <button onclick="calculate()">Calculate</button>
-
-    <h3>Total Fee: <span id="total"></span></h3>
-
-    <footer>
-        <p>Contact Information:</p>
-        <p>Phone: 714-720-9964</p>
-        <p>Email: <a href="mailto:nishaanthk@g.ucla.edu">nishaanthk@g.ucla.edu</a></p>
-    </footer>
+    <!-- rest of your code ... -->
 
     <script>
-        function calculate() {
-            const classes = document.getElementById("classes").value;
-            const siblings = document.getElementById("siblings").value;
-            const promo = document.getElementById("promo").value;
-
-            let rate = 0;
-
-            if (classes >= 1 && classes <= 4) {
-                rate = 120;
-            } else if (classes >= 5 && classes <= 8) {
-                rate = 110;
-            } else if (classes >= 9 && classes <= 12) {
-                rate = 100;
-            } else if (classes >= 13 && classes <= 16) {
-                rate = 90;
-            } else if (classes >= 17 && classes <= 20) {
-                rate = 80;
-            } else if (classes >= 21 && classes <= 24) {
-                rate = 70;
-            }
-
-            if (promo.toUpperCase() === "IRVINE") {
-                rate -= 20;
-            }
-
-            let total = classes * rate;
-
-            // Calculate the discount for siblings
-            for (let i = 0; i < siblings; i++) {
-                total += (classes * rate * 0.75);
-            }
-
-            document.getElementById("total").innerText = "$" + total;
-        }
+        // your JavaScript code ...
     </script>
-
 </body>
 </html>
 
