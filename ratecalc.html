@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Campus Advisors</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Hind', sans-serif;
@@ -46,6 +48,10 @@
             padding: 5px;
         }
 
+        .sibling-classes {
+            display: none;
+        }
+
         button {
             background-color: #FFD100; /* UCLA Gold */
             border: none;
@@ -72,6 +78,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Dream Campus Advisors</h1>
 
@@ -111,11 +118,98 @@
     </table>
 
     <h2>Fee Calculator</h2>
-    <!-- rest of your code ... -->
+
+    <div>
+        <label for="classes">Number of Classes (Main Student):</label>
+        <input type="number" id="classes" min="1" max="24">
+    </div>
+
+    <div>
+        <label for="siblings">Number of Siblings:</label>
+        <input type="number" id="siblings" min="0" onchange="showSiblingInputs()">
+    </div>
+
+    <div class="sibling-classes" id="sibling1">
+        <label for="sibling1-classes">Number of Classes (Sibling 1):</label>
+        <input type="number" id="sibling1-classes" min="1" max="24">
+    </div>
+
+    <div class="sibling-classes" id="sibling2">
+        <label for="sibling2-classes">Number of Classes (Sibling 2):</label>
+        <input type="number" id="sibling2-classes" min="1" max="24">
+    </div>
+    <!-- You can add more sibling divs as needed -->
+
+    <div>
+        <label for="promo">Promo Code:</label>
+        <input type="text" id="promo">
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h3>Total Fee: <span id="total"></span></h3>
+
+    <footer>
+        <p>Contact Information:</p>
+        <p>Phone: 714-720-9964</p>
+        <p>Email: <a href="mailto:nishaanthk@g.ucla.edu">nishaanthk@g.ucla.edu</a></p>
+    </footer>
 
     <script>
-        // your JavaScript code ...
-    </script>
-</body>
-</html>
+        function showSiblingInputs() {
+            const numberOfSiblings = parseInt(document.getElementById("siblings").value);
+            for (let i = 1; i <= 2; i++) {
+                const siblingInput = document.getElementById(`sibling${i}`);
+                if (i <= numberOfSiblings) {
+                    siblingInput.style.display = "block";
+                } else {
+                    siblingInput.style.display = "none";
+                }
+            }
+        }
 
+        function calculate() {
+            const classes = parseInt(document.getElementById("classes").value);
+            const siblings = parseInt(document.getElementById("siblings").value);
+            const promo = document.getElementById("promo").value;
+
+            let rate = 0;
+
+            function getRate(classes) {
+                if (classes >= 1 && classes <= 4) {
+                    return 120;
+                } else if (classes >= 5 && classes <= 8) {
+                    return 110;
+                } else if (classes >= 9 && classes <= 12) {
+                    return 100;
+                } else if (classes >= 13 && classes <= 16) {
+                    return 90;
+                } else if (classes >= 17 && classes <= 20) {
+                    return 80;
+                } else if (classes >= 21 && classes <= 24) {
+                    return 70;
+                }
+                return 0;
+            }
+
+            rate = getRate(classes);
+
+            if (promo.toUpperCase() === "IRVINE") {
+                rate -= 20;
+            }
+
+            let total = classes * rate;
+
+            // Calculate the discount for siblings
+            for (let i = 1; i <= siblings; i++) {
+                const siblingClasses = parseInt(document.getElementById(`sibling${i}-classes`).value);
+                total += (siblingClasses * getRate(siblingClasses) * 0.75);
+            }
+
+            document.getElementById("total").innerText = "$" + total;
+        }
+    </script>
+
+</body>
+
+</html>
