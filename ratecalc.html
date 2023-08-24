@@ -48,7 +48,7 @@
             padding: 5px;
         }
 
-        .sibling-classes {
+        .sibling-info {
             display: none;
         }
 
@@ -59,6 +59,7 @@
             color: #2774AE; /* UCLA Blue */
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -76,43 +77,69 @@
         a {
             color: #FFD100; /* UCLA Gold */
         }
+
+        .info {
+            background-color: #0F3B5F; /* Dark Blue */
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .payment-info {
+            display: none;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 
 <body>
     <h1>Dream Campus Advisors</h1>
 
+    <div class="info">
+        <p>1. Pre-paid hours can be used flexibly during the year from 1-3 classes per week, subject to teacher availability.</p>
+        <p>2. The above rates are per student. For each sibling, there is a 25% discount.</p>
+        <p>3. A fixed schedule that works for the teacher and the student would need to be planned. However, it may be adjusted for specific exceptions, either for the teacher or for the student, with 24 hrs advance notice.</p>
+        <p>4. Fee is due before the start of the course. Amount due = number of classes committed * hourly fee.</p>
+    </div>
+
     <table>
         <thead>
             <tr>
                 <th>Number of Classes (each class is 2 hours)</th>
                 <th>Hourly Fee</th>
+                <th>Fee per Class</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Up to 4 classes</td>
-                <td>$60 per hr ($120 per class)</td>
+                <td>$60 per hr</td>
+                <td>$120 per class</td>
             </tr>
             <tr>
                 <td>5 - 8 classes</td>
-                <td>$55 per hr ($110 per class)</td>
+                <td>$55 per hr</td>
+                <td>$110 per class</td>
             </tr>
             <tr>
                 <td>9 - 12 classes</td>
-                <td>$50 per hr ($100 per class)</td>
+                <td>$50 per hr</td>
+                <td>$100 per class</td>
             </tr>
             <tr>
                 <td>13 - 16 classes</td>
-                <td>$45 per hr ($90 per class)</td>
+                <td>$45 per hr</td>
+                <td>$90 per class</td>
             </tr>
             <tr>
                 <td>17 - 20 classes</td>
-                <td>$40 per hr ($80 per class)</td>
+                <td>$40 per hr</td>
+                <td>$80 per class</td>
             </tr>
             <tr>
                 <td>21-24 classes</td>
-                <td>$35 per hour ($70 per class)</td>
+                <td>$35 per hour</td>
+                <td>$70 per class</td>
             </tr>
         </tbody>
     </table>
@@ -120,93 +147,82 @@
     <h2>Fee Calculator</h2>
 
     <div>
-        <label for="classes">Number of Classes (Main Student):</label>
+        <label for="classes">Number of Classes:</label>
         <input type="number" id="classes" min="1" max="24">
     </div>
 
     <div>
-        <label for="siblings">Number of Siblings:</label>
-        <input type="number" id="siblings" min="0" onchange="showSiblingInputs()">
+        <label for="promo-code">Promo Code:</label>
+        <input type="text" id="promo-code" placeholder="IRVINE">
     </div>
-
-    <div class="sibling-classes" id="sibling1">
-        <label for="sibling1-classes">Number of Classes (Sibling 1):</label>
-        <input type="number" id="sibling1-classes" min="1" max="24">
-    </div>
-
-    <div class="sibling-classes" id="sibling2">
-        <label for="sibling2-classes">Number of Classes (Sibling 2):</label>
-        <input type="number" id="sibling2-classes" min="1" max="24">
-    </div>
-    <!-- You can add more sibling divs as needed -->
 
     <div>
-        <label for="promo">Promo Code:</label>
-        <input type="text" id="promo">
+        <label for="registerSibling">Are you registering a sibling as well?</label>
+        <select id="registerSibling" onchange="showSiblingInput()">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
     </div>
 
-    <button onclick="calculate()">Calculate</button>
+    <div class="sibling-info">
+        <label for="sibling-classes">Number of Classes for Sibling:</label>
+        <input type="number" id="sibling-classes" min="1" max="24">
+    </div>
 
-    <h3>Total Fee: <span id="total"></span></h3>
+    <button onclick="calculateFee()">Calculate Fee</button>
+    <div id="result"></div>
+
+    <button onclick="displayPaymentInfo()">Payment Info</button>
+
+    <div class="payment-info" id="paymentInfoDiv">
+        <h3>Payment Information</h3>
+        <p>Fee may be paid via Zelle or Venmo</p>
+        <p>Zelle: nishukrishtravel@gmail.com</p>
+        <p>Venmo: @Nishaanth-Krishnan</p>
+    </div>
 
     <footer>
-        <p>Contact Information:</p>
-        <p>Phone: 714-720-9964</p>
-        <p>Email: <a href="mailto:nishaanthk@g.ucla.edu">nishaanthk@g.ucla.edu</a></p>
+        Contact Info: <a href="tel:7147209964">7147209964</a> | <a href="mailto:nishaanthk@g.ucla.edu">nishaanthk@g.ucla.edu</a>
     </footer>
 
     <script>
-        function showSiblingInputs() {
-            const numberOfSiblings = parseInt(document.getElementById("siblings").value);
-            for (let i = 1; i <= 2; i++) {
-                const siblingInput = document.getElementById(`sibling${i}`);
-                if (i <= numberOfSiblings) {
-                    siblingInput.style.display = "block";
-                } else {
-                    siblingInput.style.display = "none";
-                }
+        function showSiblingInput() {
+            const isRegisteringSibling = document.getElementById("registerSibling").value;
+            const siblingInfoDiv = document.querySelector(".sibling-info");
+            if (isRegisteringSibling === "yes") {
+                siblingInfoDiv.style.display = "block";
+            } else {
+                siblingInfoDiv.style.display = "none";
             }
         }
 
-        function calculate() {
-            const classes = parseInt(document.getElementById("classes").value);
-            const siblings = parseInt(document.getElementById("siblings").value);
-            const promo = document.getElementById("promo").value;
+        function calculateFee() {
+            let classes = parseFloat(document.getElementById("classes").value);
+            let promoCode = document.getElementById("promo-code").value;
+            let siblingClasses = parseFloat(document.getElementById("sibling-classes").value || 0);
 
-            let rate = 0;
+            let totalFee = calculateStudentFee(classes);
+            let siblingFee = calculateStudentFee(siblingClasses) * 0.75; // 25% discount for siblings
 
-            function getRate(classes) {
-                if (classes >= 1 && classes <= 4) {
-                    return 120;
-                } else if (classes >= 5 && classes <= 8) {
-                    return 110;
-                } else if (classes >= 9 && classes <= 12) {
-                    return 100;
-                } else if (classes >= 13 && classes <= 16) {
-                    return 90;
-                } else if (classes >= 17 && classes <= 20) {
-                    return 80;
-                } else if (classes >= 21 && classes <= 24) {
-                    return 70;
-                }
-                return 0;
+            if (promoCode === "IRVINE") {
+                totalFee -= 100;
             }
 
-            rate = getRate(classes);
+            document.getElementById("result").innerText = `Total fee: $${totalFee + siblingFee}`;
+        }
 
-            if (promo.toUpperCase() === "IRVINE") {
-                rate -= 20;
-            }
+        function calculateStudentFee(classes) {
+            if (classes <= 4) return classes * 120;
+            if (classes <= 8) return classes * 110;
+            if (classes <= 12) return classes * 100;
+            if (classes <= 16) return classes * 90;
+            if (classes <= 20) return classes * 80;
+            return classes * 70;
+        }
 
-            let total = classes * rate;
-
-            // Calculate the discount for siblings
-            for (let i = 1; i <= siblings; i++) {
-                const siblingClasses = parseInt(document.getElementById(`sibling${i}-classes`).value);
-                total += (siblingClasses * getRate(siblingClasses) * 0.75);
-            }
-
-            document.getElementById("total").innerText = "$" + total;
+        function displayPaymentInfo() {
+            const paymentInfoDiv = document.getElementById("paymentInfoDiv");
+            paymentInfoDiv.style.display = "block";
         }
     </script>
 
