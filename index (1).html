@@ -1,468 +1,127 @@
-<!DOCTYPE HTML>
-<!--
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>College Guidance with Nishaanth Krishnan</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" type="image/x-icon" href="/images/AdmitTreeLogo.jpg">
-	</head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LG1FT0HY4"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Campus Advisors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2774AE; /* UCLA Blue */
+            color: #FFFFFF; /* UCLA White */
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-	gtag('config', 'G-3LG1FT0HY4');
-	</script>
-	<body class="is-preload">
-			<div id="wrapper">
-					<section class="intro">
-    <header>
-        <h1>UCLA worthy college app help.</h1>
-        <p>Stressed about your child's applications? Get personalized application building, activity tailoring, and essay editing from a UCLA student who beat the game.</p>
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
 
-        <ul class="actions" style="margin-bottom: 20px;"> <!-- added margin-bottom for spacing -->
-            <li><a href="https://calendly.com/nishaanthkrishnan/30min" target="_blank" rel="noopener noreferrer" class="button hero">Schedule a call</a></li>
-            <li><a href="https://forms.gle/dcfrfcAXe9GfHA2m7" target="_blank" rel="noopener noreferrer" class="button">FREE Webinar Sign-Up</a></li>
-        </ul>
+        label {
+            margin-right: 10px;
+        }
 
-        <!-- Second Row of Buttons with inline style for spacing -->
-        <ul class="actions" style="margin-top: 0;"> <!-- removed the margin-top for more compact spacing -->
-            <!-- You can update the links and labels as per your needs -->
-            <li><a href="#first" class="button">About Me</a></li>
-            <li><a href= "https://calendly.com/nishaanthkrishnan/30min" class="button">Contact Me</a></li>
-            <li><a href="#third" class="button"> Packages 3</a></li>
-        </ul>
-        
-    </header>
+        input {
+            margin-bottom: 1rem;
+            padding: 5px;
+        }
 
-						</header>
-						<div class="content">
-							<!-- <span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span> -->
-							<!-- <span class="image fill" data-position="center"><img src="images/me/headshot.jpg" alt="" /></span> -->
-							<span class="image fill" data-position="center"><img src="images/me/ucela.png" alt="" /></span>
-							<!-- <span class="image fill" data-position="center"><img src="images/stanford.webp" alt="" /></span> -->
-						</div>
-					</section>
-					<section id="first">
-						<header>
-							<h2>A different type of consulting.</h2>
-						</header>
-						<div class="content">
-							<p>Why get overcharged to have your child turned into a <strong>cookie-cutter</strong> applicant? Here's something the other consultants won't tell you. These cookie-cutter applicants <strong>don't get in</strong>. Top schools look for genuine passion, intellectual vitality, and the accomplishments to go along with it. I'll transform your child's personal interests into a unique and compelling story that will leave Admissions Officers speechless.</p>
-							<ul class="actions">
-								<li><a href="https://calendly.com/nishaanthkrishnan/30min" target="_blank" rel="noopener noreferrer" class="button primary large">Free Consultation</a></li>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<header>
-							<h2>About Nishaanth.</h2>
-						</header>
-						<div class="content">
-							<p>I'm <strong>Nishaanth Krishnan</strong>, and I'm thrilled you've trusted me to be your family's personal guide throughout the college journey. As a senior at UCLA, I've been in your shoes. Many dinner table conversations and stressful evenings came before UCLA, but with acceptances to <strong>UCLA, UC Berkeley and other prestigious programs</strong>, I know what strategies will help your child succeed. My mission is to bring that knowledge to you cheaper than anyone else.</p>
-							<p>With over 3 years of private tutoring experience under my belt, I understand the power of tailored guidance. I've worked closely with students from diverse backgrounds, from recent emigrants from China to children as young as 8, helping them navigate intricate subjects with clarity and confidence. Beyond that, my past internships and apprenticeships at companies like Netflix and JPMorgan Chase have taught me how to communicate complex topics in an engaging and relatable manner. I'm excited to translate my experience into opening the world of elite colleges to everyone.</p>
-							<p>As your dedicated advisor, I'm not just focused on helping your child secure a spot at their dream college; I'm dedicated to empowering you and your family to confidently step into the next chapter of your educational journey. We'll work together to craft compelling narratives and impactful essays that will resonate with admissions committees, all while nurturing the skills and mindset needed to excel.
+        button {
+            background-color: #FFD100; /* UCLA Gold */
+            border: none;
+            padding: 10px 20px;
+            color: #2774AE; /* UCLA Blue */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-							I can't wait to be part of your success story from the first essay to that dream acceptance. <a class="green" href="https://calendly.com/nishaanthkrishnan/30min" target="_blank" rel="noopener noreferrer">Get in touch with me today</a>, and let's embark on this transformative adventure together.</p>
-							<span class="image main"><img src="images/me/nishukrishheadshot.png" alt="" /></span>
-						</div>
-					</section>
-					<section>
-						<header>
-							<h2>Relevant advice. Huge savings.</h2>
-						</header>
-						<div class="content">
-							<p>As a UCLA student who's <strong>viewed my admissions file</strong>, I'll leverage my experience to provide tailored services for every step of the application process:</p>
-							<ul class="feature-icons">
-								<li class="icon solid fa-brush"><strong>Passion Projects:</strong> Unearth your interests and transform them into compelling stories</li>
-								<li class="icon solid fa-medal"><strong>Extracurricular Excellence:</strong> Shape standout activities that showcase your potential.</li>
-								<li class="icon solid fa-list-ol"><strong>Strategic College List:</strong> Curate a list of colleges that align with your aspirations.</li>
-								<li class="icon solid fa-lightbulb"><strong>Essay Brilliance:</strong> Brainstorm and craft essays that leave a lasting impression.</li>
-								<li class="icon solid fa-spell-check"><strong>Expert Editing:</strong> Polish your Common App activities and essays to perfection.</li>
-								<li class="icon solid fa-comments"><strong>Interview Prep:</strong> Gain confidence and readiness with personalized interview coaching.</li>
-							</ul>
-							<p>Other consultants will charge you thousands for outdated advice. <strong>You won't find a better value than here</strong>.</p>
-						</div>
-					</section>
-					<section>
-					<section id="third">
+        button:hover {
+            background-color: #FFC72C;
+        }
 
-						<header>
-							<h2>Packages for what you need.</h2>
-						</header>
-						<div class="content">
-							<p>All packages come with a <strong>free</strong> <a class="green" href="https://calendly.com/nishaanthkrishnan/30min" target="_blank" rel="noopener noreferrer">30-minute family consultation</a>. For services past the consultation, I offer 3 packages to meet any need:</p>
-							<div class="card">
-								<h2 class="price">$1299</h2>
-								<div class="card-content">
-									<h3>Complete Application Mastery</h3>
-									<h4>Designed for Seniors Looking for Comprehensive Support</h4>
-									<ul>
-										<li><strong>The Fundamentals:</strong> Includes everything from the "Application Accelerator" package.</li>
-										<li><strong>Unlimited Essay Support:</strong> 30-minute brainstorming/drafting sessions + asynchronous revisions for up to 9 essays.</li>
-										<li><strong>Ongoing Email Support:</strong> Send any college-related question, get a response within 24 hours.</li>
-										<li><strong>Final Application Review:</strong> Asynchronous, holistic revision of all application materials for up to 12 schools submitted.</li>
-									</ul>
-								</div>
-								<h2 class="bottom-banner">Best Value!</h2>
-							</div>
-							<div class="card">
-								<h2 class="price">$899</h2>
-								<div class="card-content">
-									<h3>Application Accelerator</h3>
-									<h4>Tailored for High School Seniors Kicking off Their Applications</h4>
-									<ul>
-										<li><strong>Comprehensive College List:</strong> Well-rounded college list based on your goals, values, and interests. Complete with deadlines for testing and submission in spreadsheet form.</li>
-										<li><strong>Essay Package:</strong> 30-minute brainstorming/drafting session + asynchronous revisions for 3 essays.</li>
-										<li><strong>Activities Refinement:</strong> 30-minute session to polish your Common App activities list and highlight your accomplishments effectively.</li>
-										<li><strong>Interview Prep:</strong> 30-minute mock-interview for a school of your choice + written feedback.</li>
-										<li><strong>Final Application Review:</strong> Asynchronous, holistic revision of all application materials for up to 3 schools before submission.</li>
-									</ul>
-								</div>
-								<h2 class="bottom-banner">Most Popular!</h2>
-							</div>
-							<div class="card">
-								<h2 class="price">$899</h2>
-								<div class="card-content">
-									<h3>Extensive Early Exploration</h3>
-									<h4>Perfect for Early High Schoolers and Their Families</h4>
-									<ul>
-										<li><strong>Passion Discovery Session:</strong> 60-minute discussion of interests and strengths + debrief of strategic, impactful extracurricular opportunities.</li>
-										<li><strong>Initial College List:</strong> Curated list of colleges that match your aspirations,  with suggested activities tailored to each.</li>
-										<li><strong>Personalized Roadmap:</strong> Step-by-step plan to navigate the next few years with confidence. Goals for extracurriculars and awards + calendared dates for testing, recommendations, financial aid, etc.</li>
-										<li><strong>Essay Brainstorming Session:</strong> 60-minute collaborative workshop to brainstorm personal statement topics showcasing your unique story.</li> up to 3 schools before submission.</li>
-									</ul>
-								</div>
-								<h2 class="bottom-banner">Most Popular!</h2>
-							</div>
-							<div class="card">
-								<h2 class="price">$599</h2>
-								<div class="card-content">
-									<h3>Early Exploration Essentials</h3>
-									<h4>Perfect for Early High Schoolers and Their Families</h4>
-									<ul>
-										<li><strong>Passion Discovery Session:</strong> 60-minute discussion of interests and strengths + debrief of strategic, impactful extracurricular opportunities.</li>
-										<li><strong>Personalized Roadmap:</strong> Step-by-step plan to navigate the next few years with confidence. Goals for extracurriculars and awards + calendared dates for testing, recommendations, financial aid, etc.</li>
-									</ul>
-								</div>
-							</div>
+        footer {
+            margin-top: 2rem;
+            border-top: 2px solid #FFD100;
+            padding-top: 1rem;
+            width: 100%;
+            text-align: center;
+        }
 
-							<div class="card">
-								<h2 class="price">$60 per hour</h2>
-								<div class="card-content">
-									<h3>Private Tutoring!</h3>
-									<h4>Best for students looking to kickstart their SAT/ACT Prep. </h4>
-									<ul>
-										<li><strong> Comphrensive tutoring for subjects like the SAT/ACT or high school classes like AP Calculus.</li>
-										<li><strong> Discounted rates available based on number of hours committed. See me for more details!</li>
-									</ul>
-								</div>
-								<h2 class="bottom-banner">Most Popular!</h2>
-							</div>
-							<div class="card">
-								
-								<h2 class="price">Contact Info</h2>
-								<div class="card-content">
-		
-										<li><strong> Email: nishaanthk@g.ucla.edu </li>
-										<li><strong> Phone: 714-720-9964 </li>
-									</ul>
-								</div>
-							</div>
-							</div>
-						</div>
-					</section>
-		
-					<!-- Elements -->
-				<!--
-					<section>
-						<header>
-							<h2>Elements</h2>
-						</header>
-						<div class="content">
+        a {
+            color: #FFD100; /* UCLA Gold */
+        }
+    </style>
+</head>
+<body>
+    <h1>Dream Campus Advisors</h1>
+    <h2>Fee Calculator</h2>
 
-							<section>
-								<header>
-									<h3>Text</h3>
-								</header>
-								<div class="content">
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<hr />
-									<h5>Blockquote</h5>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h5>Preformatted</h5>
-									<pre><code>i = 0;
+    <div>
+        <label for="classes">Number of Classes:</label>
+        <input type="number" id="classes" min="1" max="24">
+    </div>
 
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
+    <div>
+        <label for="siblings">Number of Siblings:</label>
+        <input type="number" id="siblings" min="0">
+    </div>
 
-print 'Sorted in ' + i + ' iterations.';</code></pre>
-								</div>
-							</section>
+    <div>
+        <label for="promo">Promo Code:</label>
+        <input type="text" id="promo">
+    </div>
 
-							<section>
-								<header>
-									<h3>Lists</h3>
-								</header>
-								<div class="content">
+    <button onclick="calculate()">Calculate</button>
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+    <h3>Total Fee: <span id="total"></span></h3>
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+    <footer>
+        <p>Contact Information:</p>
+        <p>Phone: 714-720-9964</p>
+        <p>Email: <a href="mailto:nishaanthk@g.ucla.edu">nishaanthk@g.ucla.edu</a></p>
+    </footer>
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+    <script>
+        function calculate() {
+            const classes = document.getElementById("classes").value;
+            const siblings = document.getElementById("siblings").value;
+            const promo = document.getElementById("promo").value;
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-							</section>
+            let rate = 0;
 
-							<section>
-								<header>
-									<h3>Table</h3>
-								</header>
-								<div class="content">
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+            if (classes >= 1 && classes <= 4) {
+                rate = 120;
+            } else if (classes >= 5 && classes <= 8) {
+                rate = 110;
+            } else if (classes >= 9 && classes <= 12) {
+                rate = 100;
+            } else if (classes >= 13 && classes <= 16) {
+                rate = 90;
+            } else if (classes >= 17 && classes <= 20) {
+                rate = 80;
+            } else if (classes >= 21 && classes <= 24) {
+                rate = 70;
+            }
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</section>
+            if (promo.toUpperCase() === "IRVINE") {
+                rate -= 20;
+            }
 
-							<section>
-								<header>
-									<h3>Buttons</h3>
-								</header>
-								<div class="content">
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</div>
-							</section>
+            let total = classes * rate;
 
-							<section>
-								<header>
-									<h3>Form</h3>
-								</header>
-								<div class="content">
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</div>
-							</section>
+            // Calculate the discount for siblings
+            for (let i = 0; i < siblings; i++) {
+                total += (classes * rate * 0.75);
+            }
 
-						</div>
-					</section>
-				-->
+            document.getElementById("total").innerText = "$" + total;
+        }
+    </script>
 
-				<!-- Disclaimer -->
-				<div class="copyright">Disclaimer: While I provide advice and strategies based on my own experiences and successes as well as that of other students, I cannot guarantee college acceptances. My guidance is designed to empower you to present your best self in your applications. However, I am not an Admissions Officer, nor do I have the authority to influence their decisions. College admissions involve multiple variables beyond our control. I'm committed to supporting you throughout the process, but the final outcome ultimately rests with the admissions committees.</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
+
