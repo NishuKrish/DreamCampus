@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Campus Advisors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Hind', sans-serif;
+            background-color: #2774AE; /* UCLA Blue */
+            color: #FFFFFF; /* UCLA White */
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        button {
+            background-color: #FFD100; /* UCLA Gold */
+            color: #2774AE; /* UCLA Blue */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #FFB81C; /* Slightly darker UCLA Gold */
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #FFFFFF;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 70%;
+            color: #000;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .package-description {
+            text-align: left;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dream Campus Advisors</h1>
+    <p>All packages come with a free 30-minute family consultation.</p>
+    <form id="package-form">
+        <h2>Choose a Package:</h2>
+        <select id="package-selection" onchange="showDescription()">
+            <option value="3000">COMPLETE APPLICATION MASTERY - $3000 one time </option>
+            <option value="2000">APPLICATION ACCELERATOR - $2000 one time </option>
+            <option value="1120">EXTENSIVE EARLY EXPLORATION PlUS - $1120 per month </option>
+            <option value="720">EXTENSIVE EARLY EXPLORATION - $720 per month </option>
+            <option value="1500">EARLY EXPLORATION ESSENTIALS - $1500 one month </option>
+        </select>
+
+        <div id="mastery" class="package-description">
+            <ul>
+              <li>Comprehensive College List: Well-rounded college list based on your goals, values, and interests. Complete with deadlines for testing and submission in spreadsheet form.</li>
+                <li>Essay Package: 30-minute brainstorming/drafting session + asynchronous revisions for 3 essays.</li>
+                <li>Activities Refinement: 30-minute session to polish your Common App/UC activities list and highlight your accomplishments effectively.</li>
+                <li>Interview Prep: 30-minute mock-interview for a school of your choice + written feedback.</li>
+                <li>Final Application Review: Asynchronous, holistic revision of all application materials for up to 3 schools before submission.</li>
+                <li>Unlimited Essay Support: 30-minute brainstorming/drafting sessions + asynchronous revisions for up to 9 essays.</li>
+                <li>Ongoing Email Support: Send any college-related question, get a response within 24 hours.</li>
+                <li>Final Application Review: Asynchronous, holistic revision of all application materials for up to 12 schools submitted.</li>
+            </ul>
+        </div>
+
+        <div id="accelerator" class="package-description">
+            <ul>
+                <li>Comprehensive College List: Well-rounded college list based on your goals, values, and interests. Complete with deadlines for testing and submission in spreadsheet form.</li>
+                <li>Essay Package: 30-minute brainstorming/drafting session + asynchronous revisions for 3 essays.</li>
+                <li>Activities Refinement: 30-minute session to polish your Common App activities list and highlight your accomplishments effectively.</li>
+                <li>Interview Prep: 30-minute mock-interview for a school of your choice + written feedback.</li>
+                <li>Final Application Review: Asynchronous, holistic revision of all application materials for up to 3 schools before submission.</li>
+            </ul>
+        </div>
+        <div id="explorationplus" class="package-description">
+            <ul>
+                <li>Passion Discovery Session: 60-minute discussion of interests and strengths + debrief of strategic, impactful extracurricular opportunities.</li>
+                <li>Initial College List: Curated list of colleges that match your aspirations, with suggested activities tailored to each.</li>
+                <li>Personalized Roadmap: Step-by-step plan to navigate the next few years with confidence. Goals for extracurriculars and awards + calendared dates for testing, recommendations, financial aid, etc.</li>
+                <li>Biweekly mentor sessions from a student from a top university</li>
+                <li>Includes 8 hours of tutoring per month in a subject of choice (SAT, ACT, AP, etc.) </li>
+
+            </ul>
+        </div>
+
+        <div id="exploration" class="package-description">
+            <ul>
+                <li>Passion Discovery Session: 60-minute discussion of interests and strengths + debrief of strategic, impactful extracurricular opportunities.</li>
+                <li>Initial College List: Curated list of colleges that match your aspirations, with suggested activities tailored to each.</li>
+                <li>Personalized Roadmap: Step-by-step plan to navigate the next few years with confidence. Goals for extracurriculars and awards + calendared dates for testing, recommendations, financial aid, etc.</li>
+                <li>Biweekly mentor sessions from a student from a top university</li>
+                <li>up to 3 schools before submission.</li>
+            </ul>
+        </div>
+
+        <div id="essentials" class="package-description">
+            <ul>
+                <li>Passion Discovery Session: 60-minute discussion of interests and strengths + debrief of strategic, impactful extracurricular opportunities.</li>
+                <li>Personalized Roadmap: Step-by-step plan to navigate the next few years with confidence. Goals for extracurriculars and awards + calendared dates for testing, recommendations, financial aid, etc.</li>
+            </ul>
+        </div>
+
+        <br>
+        <label for="promo-code">Enter Promo Code:</label>
+        <input type="text" id="promo-code">
+        <br>
+        <button type="button" onclick="calculatePackageCost()">Calculate Cost</button>
+    </form>
+    <p id="result"></p>
+
+    <!-- Contact Info -->
+    <footer>
+        <p>Contact Info:</p>
+        <p>Phone: 7147209964</p>
+        <p>Email: nishaanthk@g.ucla.edu</p>
+    </footer>
+
+    <script>
+        function showDescription() {
+            const selectedPackage = document.getElementById("package-selection").value;
+            const descriptions = document.querySelectorAll('.package-description');
+
+            descriptions.forEach(desc => {
+                desc.style.display = 'none';
+            });
+
+            switch (selectedPackage) {
+                case '3000':
+                    document.getElementById('mastery').style.display = 'block';
+                    break;
+                case '2000':
+                    document.getElementById('accelerator').style.display = 'block';
+                    break;
+                case '1200':
+                    document.getElementById('exploration').style.display = 'block';
+                    break;
+                case '1500':
+                    document.getElementById('essentials').style.display = 'block';
+                    break;
+            }
+        }
+
+        function calculatePackageCost() {
+            let packageCost = parseFloat(document.getElementById("package-selection").value);
+            let promoCode = document.getElementById("promo-code").value;
+
+            if (promoCode === "IRVINE" || promoCode === "GEOGENIUS") {
+                packageCost *= 0.50; // 50% discount
+            }
+
+            document.getElementById("result").innerText = `Total cost: $${packageCost.toFixed(2)}`;
+        }
+
+        // Display the description for the default selected package when the page loads
+        window.onload = function() {
+            showDescription();
+        }
+    </script>
+
+    <!-- Modal Popup -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Payment Info</h2>
+            <p>Zelle: nishukrishtravel@gmail.com</p>
+            <p>Venmo: @Nishaanth-Krishnan</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('paymentModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
