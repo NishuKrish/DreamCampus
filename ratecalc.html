@@ -97,7 +97,7 @@
 
     <div class="info">
         <p>1. Pre-paid hours can be used flexibly during the year from 1-3 classes per week, subject to teacher availability.</p>
-        <p>2. The above rates are per student. For each sibling, there is a 25% discount.</p>
+        <p>2. The above rates are per student. For each sibling, there is a 10% discount.</p>
         <p>3. A fixed schedule that works for the teacher and the student would need to be planned. However, it may be adjusted for specific exceptions, either for the teacher or for the student, with 24 hrs advance notice.</p>
         <p>4. Fee is due before the start of the course. Amount due = number of classes committed * hourly fee.</p>
     </div>
@@ -152,11 +152,6 @@
     </div>
 
     <div>
-        <label for="promo-code">Promo Code:</label>
-        <input type="text" id="promo-code" placeholder="IRVINE">
-    </div>
-
-    <div>
         <label for="registerSibling">Are you registering a sibling as well?</label>
         <select id="registerSibling" onchange="showSiblingInput()">
             <option value="no">No</option>
@@ -202,11 +197,7 @@
             let siblingClasses = parseFloat(document.getElementById("sibling-classes").value || 0);
 
             let totalFee = calculateStudentFee(classes);
-            let siblingFee = calculateStudentFee(siblingClasses) * 0.75; // 25% discount for siblings
-
-            if (promoCode === "IRVINE") {
-                totalFee -= 100;
-            }
+            let siblingFee = calculateStudentFee(siblingClasses) * 0.90; // 25% discount for siblings
 
             document.getElementById("result").innerText = `Total fee: $${totalFee + siblingFee}`;
         }
