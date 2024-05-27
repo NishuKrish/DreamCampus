@@ -1,0 +1,79 @@
+body {
+    font-family: 'Hind', sans-serif;
+    background-color: #0033a0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #0033a0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    border: 2px solid #ffc72c;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ffc72c;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+.camp-details {
+    margin-bottom: 20px;
+}
+
+.camp-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #ffc72c;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+p {
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.cta-button {
+    background-color: #ffc72c;
+    color: #0033a0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #e6b800;
+}
+
+footer {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 0.9em;
+}
