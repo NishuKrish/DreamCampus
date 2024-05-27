@@ -1,22 +1,23 @@
 body {
     font-family: 'Hind', sans-serif;
-    background-color: #0033a0;
+    background-color: #2774AE;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #FFFFFF;
 }
 
 .container {
-    background-color: #0033a0;
+    background-color: #2774AE;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 600px;
-    border: 2px solid #ffc72c;
+    border: 2px solid #FFD100;
 }
 
 header {
@@ -24,13 +25,13 @@ header {
 }
 
 h1 {
-    color: #ffc72c;
+    color: #FFD100;
     font-size: 2.5em;
     font-weight: 600;
 }
 
 h2 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 1.8em;
     font-weight: 400;
 }
@@ -47,19 +48,19 @@ h2 {
 }
 
 h3 {
-    color: #ffc72c;
+    color: #FFD100;
     font-size: 1.5em;
     font-weight: 400;
 }
 
-p {
-    color: #ffffff;
+p, ul {
+    color: #FFFFFF;
     font-size: 1em;
 }
 
 .cta-button {
-    background-color: #ffc72c;
-    color: #0033a0;
+    background-color: #FFD100;
+    color: #2774AE;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -74,6 +75,7 @@ p {
 
 footer {
     margin-top: 20px;
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 0.9em;
 }
+
