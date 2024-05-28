@@ -1,22 +1,23 @@
 body {
     font-family: 'Hind', sans-serif;
-    background-color: #8BB8E8;
+    background-color: #005587;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     color: #FFFFFF;
 }
 
 .container {
-    background-color: #8BB8E8;
+    background-color: #005587;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 600px;
+    width: 90%;
     border: 2px solid #FFD100;
 }
 
@@ -24,14 +25,16 @@ header {
     margin-bottom: 20px;
 }
 
+h1, h2, h3 {
+    color: #FFD100;
+}
+
 h1 {
-    color: #FFFFFF;
     font-size: 2.5em;
     font-weight: 600;
 }
 
 h2 {
-    color: #FFFFFF;
     font-size: 1.8em;
     font-weight: 400;
 }
@@ -47,12 +50,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-h3 {
-    color: #FFFFFF;
-    font-size: 1.5em;
-    font-weight: 400;
-}
-
 p, ul {
     color: #FFFFFF;
     font-size: 1em;
@@ -60,7 +57,7 @@ p, ul {
 
 .cta-button {
     background-color: #FFD100;
-    color: #8BB8E8;
+    color: #005587;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -78,4 +75,3 @@ footer {
     color: #FFFFFF;
     font-size: 0.9em;
 }
-
